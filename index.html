@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hans Techy Company Ltd</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Hans Techy Logo">
+      <h1>HANS TECHY COMPANY LIMITED</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a onclick="showSection('home')">Home</a></li>
+        <li><a onclick="showSection('about')">About</a></li>
+        <li><a onclick="showSection('services')">Services</a></li>
+        <li><a onclick="showSection('us')">Us</a></li>
+        <li><a onclick="showSection('support')">Support</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="section active">
+    <h2>Karibu Hans Techy</h2>
+    <p>Jifunze kutumia AI, Jifunze kufanikwa.</p>
+    <div class="slideshow">
+      <div class="slide fade">
+        <img src="img1.jpg" alt="Slide 1">
+        <div class="slide-text">Teknolojia ya Kisasa</div>
+      </div>
+      <div class="slide fade">
+        <img src="img2.jpg" alt="Slide 2">
+        <div class="slide-text">Huduma za Kidigitali</div>
+      </div>
+      <div class="slide fade">
+        <img src="img3.jpg" alt="Slide 3">
+        <div class="slide-text">Mafanikio Kupitia AI</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>Hans Techy Company Ltd ni watoa huduma za teknolojia na AI, tukilenga kukuza elimu na mafanikio kupitia vitabu vya kidigitali na mafunzo ya AI.</p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <h2>Huduma Zote za Online</h2>
+    <ul>
+      <li>RITA</li>
+      <li>TRA</li>
+      <li>NIDA</li>
+      <li>Ajira Portal</li>
+      <li>Uhamiaji</li>
+    </ul>
+    <p><a href="https://wa.me/255674688818">WhatsApp: +255 674 688 818</a></p>
+  </section>
+
+  <!-- Us -->
+  <section id="us" class="section">
+    <h2>Us</h2>
+    <p>Mafanikio hayawezi kuja bila kujituma. Hapa utajifunza kuhusu mafanikio na kuongeza ujuzi wako kila siku kupitia sisi.</p>
+  </section>
+
+  <!-- Support -->
+  <section id="support" class="section">
+    <h2>Support</h2>
+    <p>WhatsApp: +255 674 688 818</p>
+    <p>Fax: +255 686 005 775</p>
+    <p>Email: <a href="mailto:hanstechy@outlook.com">hanstechy@outlook.com</a></p>
+    <form action="support_process.php" method="post">
+      <label for="name">Jina</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Barua Pepe</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Ujumbe</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit">Tuma</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2026 HANS TECHY | Powered by AI Technology
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>
