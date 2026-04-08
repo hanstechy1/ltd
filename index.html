@@ -1,230 +1,250 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hans Techy Company Ltd </title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #0077cc;
-      color: #fff;
-      padding: 15px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo img {
-      height: 50px;
-      margin-right: 10px;
-    }
-    .logo h1 {
-      margin: 0;
-      font-size: 22px;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    nav ul li {
-      margin-left: 20px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #ffcc00;
-    }
-    .section {
-      display: none;
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      animation: fadeIn 1s ease-in-out;
-    }
-    .section.active {
-      display: block;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    .slideshow {
-      position: relative;
-      max-width: 900px;
-      margin: 20px auto;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .slide {
-      display: none;
-    }
-    .slide img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .slide-text {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 6px;
-      font-size: 18px;
-    }
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-    @keyframes fade {
-      from {opacity: .4}
-      to {opacity: 1}
-    }
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      background: #25D366;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .whatsapp-btn:hover {
-      background: #1ebd5a;
-    }
-    .whatsapp-btn img {
-      height: 20px;
-      margin-right: 8px;
-    }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    .social-icons {
-      margin-top: 10px;
-    }
-    .social-icons a {
-      display: inline-block;
-      margin: 0 8px;
-    }
-    .social-icons img {
-      height: 28px;
-      width: 28px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hans Techy Company</title>
+
+<style>
+body{margin:0;font-family:Arial;}
+
+/* HEADER */
+.header{
+    background:linear-gradient(to right,#2b00ff,#6a00ff);
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+.logo{width:80px;float:left;}
+
+/* NAV */
+.nav button{
+    margin:5px;
+    padding:10px 20px;
+    border:none;
+    background:linear-gradient(#cce6ff,#99ccff);
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* SECTIONS */
+.section{display:none;}
+.active{display:block;}
+
+/* VIDEO BACKGROUND */
+.video-container{
+    position:relative;
+    height:80vh;
+    overflow:hidden;
+}
+
+.video-container video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* IMAGE SLIDE OVER VIDEO */
+.slide-img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity 1s;
+}
+
+/* OVERLAY */
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+/* TEXT CONTENT */
+.content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* TITLE */
+.title-box{
+    text-align:center;
+    margin:20px;
+    font-size:40px;
+    font-weight:bold;
+    background:linear-gradient(gold,orange);
+    display:inline-block;
+    padding:10px 40px;
+}
+
+/* BOX */
+.box{
+    background:linear-gradient(#fff2cc,#ffe599);
+    padding:30px;
+    text-align:center;
+    font-size:25px;
+    font-weight:bold;
+}
+
+/* FORM */
+input, textarea{
+    width:80%;
+    padding:12px;
+    margin:10px;
+    font-size:16px;
+}
+textarea{height:150px;}
+
+/* FOOTER */
+.footer{
+    background:#0b3c66;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+}
+.whatsapp img{width:30px;}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Hans Techy Logo">
-      <h1>HANS TECHY COMPANY LIMITED</h1>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="logo.png" class="logo">
+    <h1>HANS TECHY COMPANY LIMITED</h1>
+    <p>JIFUNZE KUTUMIA AI, JIFUNZE KUFANIKIWA</p>
+
+    <div class="nav">
+        <button onclick="showSection('home')">HOME</button>
+        <button onclick="showSection('about')">ABOUT</button>
+        <button onclick="showSection('services')">SERVICES</button>
+        <button onclick="showSection('us')">US</button>
+        <button onclick="showSection('support')">SUPPORT</button>
     </div>
-    <nav>
-      <ul>
-        <li><a onclick="showSection('home')">Home</a></li>
-        <li><a onclick="showSection('about')">About</a></li>
-        <li><a onclick="showSection('services')">Services</a></li>
-        <li><a onclick="showSection('us')">Us</a></li>
-        <li><a onclick="showSection('support')">Support</a></li>
-      </ul>
-    </nav>
-  </header>
+</div>
 
-  <!-- Home -->
-  <section id="home" class="section active">
-    <h2>Karibu Hans Techy</h2>
-    <p>Jifunze kutumia AI, Jifunze kufanikwa.</p>
-    <div class="slideshow">
-      <div class="slide fade">
-        <img src="img1.jpg" alt="Slide 1">
-        <div class="slide-text">Teknolojia ya Kisasa</div>
-      </div>
-      <div class="slide fade">
-        <img src="img2.jpg" alt="Slide 2">
-        <div class="slide-text">Huduma za Kidigitali</div>
-      </div>
-      <div class="slide fade">
-        <img src="img3.jpg" alt="Slide 3">
-        <div class="slide-text">Mafanikio Kupitia AI</div>
-      </div>
+<!-- HOME -->
+<div id="home" class="section active">
+
+<div class="video-container">
+
+    <!-- VIDEO -->
+    <video autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <!-- IMAGE SLIDES -->
+    <img src="slide1.jpg" class="slide-img">
+    <img src="slide2.jpg" class="slide-img">
+    <img src="slide3.jpg" class="slide-img">
+
+    <!-- OVERLAY -->
+    <div class="overlay"></div>
+
+    <!-- TEXT -->
+    <div class="content">
+        <h1 style="font-size:45px;">Karibu Hans Techy</h1>
+        <p style="font-size:22px;max-width:700px;">
+            Jifunze AI, boresha biashara yako, na fikia mafanikio kupitia teknolojia.
+        </p>
+        <button style="padding:15px 30px;font-size:18px;background:#25D366;color:white;border:none;">
+            Anza Sasa
+        </button>
     </div>
-  </section>
 
-  <!-- Services -->
-  <section id="services" class="section">
-    <h2>Huduma Zote za Online</h2>
-    <ul>
-      <li>RITA</li>
-      <li>TRA</li>
-      <li>NIDA</li>
-      <li>Ajira Portal</li>
-      <li>Uhamiaji</li>
-    </ul>
-    <!-- WhatsApp Button with Icon -->
-    <a href="https://wa.me/255674688818" class="whatsapp-btn">
-      <img src="whatsapp.png" alt="WhatsApp Icon"> WhatsApp: +255 674 688 818
-    </a>
-  </section>
+</div>
 
-  <!-- Support -->
-  <section id="support" class="section">
-    <h2>Support</h2>
-    <p>Fax: +255 686 005 775</p>
-    <p>Email: <a href="mailto:hanstechy@outlook.com">hanstechy@outlook.com</a></p>
-  </section>
+</div>
 
-  <footer>
-    © 2026 HANS TECHY | Powered by AI Technology
-    <div class="social-icons">
-      <a href="https://wa.me/255674688818"><img src="whatsapp.png" alt="WhatsApp"></a>
-      <a href="https://facebook.com"><img src="facebook.png" alt="Facebook"></a>
-      <a href="https://instagram.com"><img src="instagram.png" alt="Instagram"></a>
-      <a href="https://linkedin.com"><img src="linkedin.png" alt="LinkedIn"></a>
+<!-- ABOUT -->
+<div id="about" class="section">
+    <div class="title-box">About</div>
+    <div class="box">
+        <img src="team.jpg" width="300"><br><br>
+        Tunatoa huduma za online, uandishi wa vitabu na mafunzo ya mafanikio.
     </div>
-  </footer>
+</div>
 
-  <script>
-    // Show/Hide Sections
-    function showSection(sectionId) {
-      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
-    }
+<!-- SERVICES -->
+<div id="services" class="section">
+    <div class="title-box">Services</div>
+    <div class="box">
+        1. Rita<br>2. Tra<br>3. Nida<br>4. Ajira portal<br>5. Uhamiaji
+    </div>
+</div>
 
-    // Slideshow
-    let slideIndex = 0;
-    showSlides();
+<!-- US -->
+<div id="us" class="section">
+    <div class="title-box">US</div>
+    <div class="box">
+        Mafanikio huanza na wewe. Jifunze nasi kila siku.
+    </div>
+</div>
 
-    function showSlides() {
-      let slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 5000); // Badilisha kila sekunde 5
-    }
-  </script>
+<!-- SUPPORT -->
+<div id="support" class="section">
+    <div class="title-box">Support</div>
+    <div class="box">
+        WhatsApp: +255674688818<br>
+        Email: hanstechy@outlook.com<br><br>
+
+        <input type="text" placeholder="Name"><br>
+        <input type="email" placeholder="Email"><br>
+        <textarea placeholder="Text"></textarea><br>
+        <button>SUBMIT</button>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+© 2026 HANS TECHY | Powered by AI Technology
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/255674688818" target="_blank" class="whatsapp">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
+<script>
+function showSection(id){
+    document.querySelectorAll(".section").forEach(sec=>sec.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+
+/* IMAGE SLIDER OVER VIDEO */
+let slides=document.querySelectorAll(".slide-img");
+let i=0;
+
+function changeSlide(){
+    slides.forEach(s=>s.style.opacity=0);
+    slides[i].style.opacity=0.5;
+    i=(i+1)%slides.length;
+}
+
+setInterval(changeSlide,5000);
+changeSlide();
+</script>
+
 </body>
 </html>
