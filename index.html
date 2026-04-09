@@ -6,19 +6,25 @@
 <title>Hans Techy Company</title>
 
 <style>
-body{margin:0;font-family:Arial;}
+body {
+    margin:0;
+    font-family:Arial;
+}
 
-/* HEADER */
-.header{
-    background:linear-gradient(to right,#2b00ff,#6a00ff);
+/* HEADER & FOOTER SAME COLOR */
+.header, .footer {
+    background:#0b3c66; /* rangi moja */
     color:white;
     text-align:center;
-    padding:15px;
+    padding:20px;
 }
-.logo{width:80px;float:left;}
+.logo {
+    width:80px;
+    float:left;
+}
 
 /* NAV */
-.nav button{
+.nav button {
     margin:5px;
     padding:10px 20px;
     border:none;
@@ -27,83 +33,60 @@ body{margin:0;font-family:Arial;}
     cursor:pointer;
 }
 
-/* SECTIONS */
-.section{display:none;}
-.active{display:block;}
-
-}
-
-/* IMAGE SLIDE OVER VIDEO */
-.slide-img{
-    position:absolute;
+/* SECTIONS FULL WIDTH */
+.section {
+    display:none;
     width:100%;
-    height:100%;
-    object-fit:cover;
-    opacity:0;
-    transition:opacity 1s;
+    min-height:100vh; /* full height kwenye screen */
+    box-sizing:border-box;
+    padding:40px 20px;
 }
-
-/* OVERLAY */
-.overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.5);
-}
-
-/* TEXT CONTENT */
-.content{
-    position:relative;
-    z-index:2;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    text-align:center;
-    padding:40px;
-}
+.active {display:block;}
 
 /* TITLE */
-.title-box{
+.title-box {
     text-align:center;
-    margin:20px;
-    font-size:20px;
+    margin:20px auto;
+    font-size:24px;
     font-weight:bold;
     background:linear-gradient(gold,orange);
     display:inline-block;
-    padding:10px 40px;
+    padding:12px 50px;
+    border-radius:8px;
 }
 
-/* BOX */
-.box{
+/* BOX FULL WIDTH */
+.box {
     background:linear-gradient(#fff2cc,#ffe599);
     padding:30px;
     text-align:center;
-    font-size:35px;
+    font-size:22px;
     font-weight:bold;
+    max-width:100%;
+    border-radius:8px;
 }
 
 /* FORM */
-input, textarea{
-    width:80%;
+input, textarea {
+    width:90%;
     padding:12px;
-    margin:10px;
+    margin:10px auto;
     font-size:16px;
+    display:block;
 }
-textarea{height:150px;}
-
-/* FOOTER */
-.footer{
+textarea {height:150px;}
+button {
+    padding:12px 25px;
+    font-size:16px;
     background:#0b3c66;
     color:white;
-    text-align:center;
-    padding:20px;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
 }
 
 /* WHATSAPP */
-.whatsapp{
+.whatsapp {
     position:fixed;
     bottom:20px;
     right:20px;
@@ -111,7 +94,7 @@ textarea{height:150px;}
     padding:15px;
     border-radius:50%;
 }
-.whatsapp img{width:30px;}
+.whatsapp img {width:30px;}
 </style>
 </head>
 
@@ -134,35 +117,13 @@ textarea{height:150px;}
 
 <!-- HOME -->
 <div id="home" class="section active">
-
-    
-    <!-- IMAGE SLIDES -->
-    <img src="https://i.ibb.co/k2TS8dJr/9bz-If-BPm-E9.jpg" class="slide-img">
-    <img src="https://i.ibb.co/chcfKrxc/d-F75gbc9o-E.jpg" class="slide-img">
-    <img src="https://i.ibb.co/4R7WGHxK/T9gww-KSOlj.jpg" class="slide-img">
-    <img src="https://i.ibb.co/tpdwhWsP/Hw-Cb-Gpkkib.jpg" class="slide-img">
-    <img src="https://i.ibb.co/bMqN2Xb6/p-AKVuk-ALc-P.jpg" class="slide-img">
-    <img src="https://i.ibb.co/V0wx6Lky/dgmj-Xp7-VSM.jpg" class="slide-img">
-
-
-
-
-    <!-- OVERLAY -->
-    <div class="overlay"></div>
-
-    <!-- TEXT -->
     <div class="content">
         <h1 style="font-size:45px;">Karibu Hans Techy</h1>
-        <p style="font-size:22px;max-width:700px;">
+        <p style="font-size:22px;max-width:700px;margin:auto;">
             Jifunze AI, boresha biashara yako, na fikia mafanikio kupitia teknolojia.
         </p>
-        <button style="padding:15px 30px;font-size:18px;background:#25D366;color:white;border:none;">
-            Anza Sasa
-        </button>
+        <button>Anza Sasa</button>
     </div>
-
-</div>
-
 </div>
 
 <!-- ABOUT -->
@@ -197,9 +158,9 @@ textarea{height:150px;}
         WhatsApp: +255674688818<br>
         Email: hanstechy@outlook.com<br><br>
 
-        <input type="text" placeholder="Name"><br>
-        <input type="email" placeholder="Email"><br>
-        <textarea placeholder="Text"></textarea><br>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Text"></textarea>
         <button>SUBMIT</button>
     </div>
 </div>
@@ -211,7 +172,7 @@ textarea{height:150px;}
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/255674688818" target="_blank" class="whatsapp">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
 
 <script>
@@ -219,19 +180,6 @@ function showSection(id){
     document.querySelectorAll(".section").forEach(sec=>sec.classList.remove("active"));
     document.getElementById(id).classList.add("active");
 }
-
-/* IMAGE SLIDER OVER VIDEO */
-let slides=document.querySelectorAll(".slide-img");
-let i=0;
-
-function changeSlide(){
-    slides.forEach(s=>s.style.opacity=0);
-    slides[i].style.opacity=0.5;
-    i=(i+1)%slides.length;
-}
-
-setInterval(changeSlide,5000);
-changeSlide();
 </script>
 
 </body>
