@@ -13,13 +13,13 @@ body {
 
 /* HEADER & FOOTER SAME COLOR */
 .header, .footer {
-    background:#0b3c66; /* rangi moja */
+    background:#0b3c66;
     color:white;
     text-align:center;
     padding:20px;
 }
 .logo {
-    width:100px;
+    width:80px;
     float:left;
 }
 
@@ -33,65 +33,65 @@ body {
     cursor:pointer;
 }
 
-/* SECTIONS FULL WIDTH */
+/* SECTIONS */
 .section {
     display:none;
     width:100%;
-    min-height:80vh; /* full height kwenye screen */
+    min-height:100vh;
     box-sizing:border-box;
     padding:40px 20px;
-    background:#0b3c66; /* rangi sawa na header/footer */
+    background:#0b3c66;
     color:white;
 }
-.active {display:block;}
+.active {display:flex;}
+
+/* HOME LANDSCAPE */
+#home {
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+.home-left {
+    flex:1;
+    position:relative;
+}
+.home-right {
+    flex:1;
+    z-index:2;
+    text-align:center;
+    padding:40px;
+}
 
 /* SLIDES */
 .slide-img {
     position:absolute;
-    width:90%;
-    height:90%;
+    width:100%;
+    height:100%;
     object-fit:cover;
     opacity:0;
     transition:opacity 1s;
-}
-.overlay {
-    position:absolute;
-    width:90%;
-    height:90%;
-    background:rgba(0,0,0,0.1);
-}
-.content {
-    position:relative;
-    z-index:2;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    text-align:center;
-    padding:40px;
 }
 
 /* TITLE */
 .title-box {
     text-align:center;
-    margin:10px auto;
-    font-size:25px;
+    margin:20px auto;
+    font-size:24px;
     font-weight:bold;
     background:linear-gradient(gold,orange);
     display:inline-block;
     padding:12px 50px;
-    border-radius:16px;
+    border-radius:8px;
     color:black;
 }
 
-/* BOX FULL WIDTH */
+/* BOX */
 .box {
-    background:rgba(255,255,255,0.1); /* transparent juu ya blue */
+    background:rgba(255,255,255,0.1);
     padding:30px;
     text-align:center;
-    font-size:44px;
+    font-size:22px;
     font-weight:bold;
     max-width:100%;
     border-radius:8px;
@@ -102,14 +102,14 @@ input, textarea {
     width:90%;
     padding:12px;
     margin:10px auto;
-    font-size:32px;
+    font-size:16px;
     display:block;
 }
-textarea {height:100px;}
+textarea {height:150px;}
 button {
-    padding:24px 50px;
-    font-size:32px;
-    background:#0b3c66;
+    padding:12px 25px;
+    font-size:16px;
+    background:#25D366;
     color:white;
     border:none;
     cursor:pointer;
@@ -126,6 +126,12 @@ button {
     border-radius:50%;
 }
 .whatsapp img {width:30px;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    #home {flex-direction:column;}
+    .home-left, .home-right {flex:none;width:100%;}
+}
 </style>
 </head>
 
@@ -147,23 +153,22 @@ button {
 </div>
 
 <!-- HOME -->
-<div id="home" class="section active" style="position:relative;">
-    <!-- IMAGE SLIDES -->
-    <img src="https://i.ibb.co/k2TS8dJr/9bz-If-BPm-E9.jpg" class="slide-img">
-    <img src="https://i.ibb.co/chcfKrxc/d-F75gbc9o-E.jpg" class="slide-img">
-    <img src="https://i.ibb.co/4R7WGHxK/T9gww-KSOlj.jpg" class="slide-img">
-    <img src="https://i.ibb.co/tpdwhWsP/Hw-Cb-Gpkkib.jpg" class="slide-img">
-    <img src="https://i.ibb.co/bMqN2Xb6/p-AKVuk-ALc-P.jpg" class="slide-img">
-    <img src="https://i.ibb.co/V0wx6Lky/dgmj-Xp7-VSM.jpg" class="slide-img">
+<div id="home" class="section active">
+    <!-- IMAGE SLIDES (kushoto) -->
+    <div class="home-left">
+        <img src="https://i.ibb.co/k2TS8dJr/9bz-If-BPm-E9.jpg" class="slide-img">
+        <img src="https://i.ibb.co/chcfKrxc/d-F75gbc9o-E.jpg" class="slide-img">
+        <img src="https://i.ibb.co/4R7WGHxK/T9gww-KSOlj.jpg" class="slide-img">
+        <img src="https://i.ibb.co/tpdwhWsP/Hw-Cb-Gpkkib.jpg" class="slide-img">
+        <img src="https://i.ibb.co/bMqN2Xb6/p-AKVuk-ALc-P.jpg" class="slide-img">
+        <img src="https://i.ibb.co/V0wx6Lky/dgmj-Xp7-VSM.jpg" class="slide-img">
+    </div>
 
-    <!-- OVERLAY -->
-    <div class="overlay"></div>
-
-    <!-- TEXT -->
-    <div class="content">
+    <!-- TEXT CONTENT (kulia) -->
+    <div class="home-right">
         <h1 style="font-size:45px;">Karibu Hans Techy</h1>
-        <p style="font-size:22px;max-width:700px;margin:auto;">
-            Jifunze AI, boresha biashara yako, na fikia mafanikio kupitia teknolojia.
+        <p id="typing-text" style="font-size:22px;max-width:500px;margin:auto;min-height:60px;">
+            <!-- maneno yataandikwa hapa -->
         </p>
         <button>Anza Sasa</button>
     </div>
@@ -173,42 +178,8 @@ button {
 <div id="about" class="section">
     <div class="title-box">About</div>
     <div class="box">
-        <img src="https://image2url.com/r2/default/images/1775842823208-fe7d0de5-9955-488a-9262-96455e466ef0.jpg" width="300"><br><br>
+        <img src="team.jpg" style="width:80%;max-width:800px;"><br><br>
         Tunatoa huduma za online, uandishi wa vitabu na mafunzo ya mafanikio.
-🟦 Hans Techy Company Ltd – Huduma Kuu
-
-1. Branding na Ubunifu
-- Kutengeneza logo za kitaalamu zenye mvuto wa kisasa.  
-- Kuunda templates za nyaraka rasmi (vyeti, barua, makaratasi ya biashara).  
-- Matangazo na cover designs zenye rangi thabiti na mvuto wa macho.  
-
-2. Automation ya Biashara
-- Mfumo wa sales receipts na ufuatiliaji wa mauzo kwa Excel/Google Sheets.  
-- WhatsApp bots kwa mawasiliano ya moja kwa moja na wateja.  
-- Kuunganisha malipo ya kisasa: M-Pesa, Selcom, Flutterwave.  
-
-3. Dashboards na Analytics
-- Dashboards zenye grafu, progress bars, na takwimu kwa uwasilishaji wa admin.  
-- Business analytics kwa ufuatiliaji wa maendeleo na maamuzi bora.  
-
-4. Elimu na Mafunzo
-- Kozi za AI kwa Kiswahili na Kiingereza kwa vijana na wafanyabiashara.  
-- Vitabu vya mafunzo na training materials zenye muonekano wa kitaalamu.  
-- Motivational content kwa jamii ya biashara na vijana.  
-
-5. Web Development na Apps
-- Tovuti zenye responsive design (PC na simu).  
-- Interactive features: sliders, video, icons, na animations.  
-- Progressive Web Apps (PWA) kwa urahisi wa kupakua na kutumia.  
-
----
-
-📞 Mawasiliano:  
--  +255 674 688 818   
--  +255 686 005 775   
-
----
-
     </div>
 </div>
 
@@ -264,12 +235,47 @@ let slides=document.querySelectorAll(".slide-img");
 let i=0;
 function changeSlide(){
     slides.forEach(s=>s.style.opacity=0);
-    slides[i].style.opacity=0.6;
+    slides[i].style.opacity=1;
     i=(i+1)%slides.length;
 }
 setInterval(changeSlide,5000);
 changeSlide();
-</script>
 
-</body>
-</html>
+/* TYPING EFFECT WITH COLOR CHANGE */
+const messages = [
+    "Jifunze AI, boresha biashara yako...",
+    "Fikia mafanikio kupitia teknolojia...",
+    "Hans Techy inakupeleka mbali..."
+];
+const colors = ["#ff0000","#00ff00","#ffff00","#00ffff","#ff00ff","#ffffff"];
+
+let msgIndex = 0;
+let charIndex = 0;
+let currentMessage = "";
+let isDeleting = false;
+const speed = 100;
+const eraseSpeed = 50;
+const delayBetween = 1500;
+
+function typeEffect(){
+    const typingElement = document.getElementById("typing-text");
+
+    if(!isDeleting && charIndex < messages[msgIndex].length){
+        currentMessage += messages[msgIndex][charIndex];
+        typingElement.textContent = currentMessage;
+        typingElement.style.color = colors[Math.floor(Math.random()*colors.length)];
+        charIndex++;
+        setTimeout(typeEffect, speed);
+    }
+    else if(isDeleting && charIndex > 0){
+        currentMessage = currentMessage.slice(0, -1);
+        typingElement.textContent = currentMessage;
+        typingElement.style.color = colors[Math.floor(Math.random()*colors.length)];
+        charIndex--;
+        setTimeout(typeEffect, eraseSpeed);
+    }
+    else if(!isDeleting && charIndex === messages[msgIndex].length){
+        isDeleting = true;
+        setTimeout(typeEffect, delayBetween);
+    }
+    else if(isDeleting && charIndex ===
